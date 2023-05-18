@@ -1,10 +1,10 @@
-import express from "express";
+import express  from "express";
 
 const app = express()
 const port = 3000
 
 app.get("/",(req,res)=>{
-  res.send("OB:)")
+  res.send("아주 화가 나")
 }).listen(port,()=>{
-  console.log(port+"도는 중")
+  console.log("서버 도는 중")
 })
