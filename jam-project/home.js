@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Button, Image} from 'react-native';
+import {View, Text, Button, Image, TextInput, TouchableOpacity} from 'react-native';
 import { Styles, StylesText, StylesColors } from './Styles.js';
 import TopMenu from './TopMenu';
 
@@ -9,6 +9,11 @@ export default function homeScreen({navigation}) {
   return (
     <View style={Styles.homeRoot}>
       <TopMenu navigation={navigation} />
+      {/* <TextInput
+        onChangeText={text => console.log(text)}
+        value=""
+        placeholder="Enter text"
+      /> */}
       <View style={Styles.homeWrap}>
         {/* <Button title="Login" onPress={() => navigation.navigate('Signup')} /> */}
         <View></View>

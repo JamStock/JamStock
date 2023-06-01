@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import { Styles, StylesColors } from './Styles';
+// import { Styles, StylesColors } from './Styles';
 import LoginScreen from './Login';
 import HomeScreen from './Home';
 import SignupScreen from './Signup';
