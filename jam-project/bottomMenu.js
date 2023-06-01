@@ -1,9 +1,11 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { Styles, StylesText } from './styles.js';
-import { navigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
-export default function BottomMenu({ navigation }) {
+export default function BottomMenuScreen() {
+  const navigation = useNavigation()
+
   return (
     <View style={Styles.bottomBox}>
       <View style={Styles.bottomView}>

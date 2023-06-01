@@ -36,6 +36,7 @@ export const Styles = StyleSheet.create({
     top: 0, 
     // left: 10,
     flex: 0,
+    marginTop: Constants.statusBarHeight,
     // borderWidth: 1,
     // borderColor: 'red'
   },
@@ -132,8 +133,7 @@ export const Styles = StyleSheet.create({
     padding:0,
     position:'absolute',
     bottom:0,
-    right:0,
-    left:0
+    marginBottom: Constants.BottomTabBarHeight,
   },
   bottomView:{
     height: '100%',
