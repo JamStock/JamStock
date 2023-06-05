@@ -11,6 +11,7 @@ const LoginScreen: React.FC<any> = ({ navigation }) => {
 
   const loginResult = () => {
     console.log("id: ", loginText, " pw: ", passwordText);
+    fetch
     // Perform search logic or any other operations with the entered text
   };
 
