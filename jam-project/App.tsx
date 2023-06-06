@@ -13,7 +13,8 @@ import WalletScreen from './View/page/wallet';
 import RecommandScreen from './View/page/recommand'
 // import {RealtimeScreen} from './View/page/realtime'
 import { GuideScreen } from './View/page/guide';
-import HambergerScreen from './View/fixed/hamberger';
+// import HambergerScreen from './View/fixed/hamberger';
+import HambergerScreen from './View/fixed/hamberger_remake';
 import FindAccountScreen from './View/page/findAccount';
 import SearchScreen from './View/page/search';
 import CompanyDetailScreen from './View/page/companyDetail';
@@ -21,35 +22,36 @@ import CompanyDetailBuyScreen from './View/page/companyDetailBuy';
 import { MyPageScreen } from './View/page/myPage';
 import { CartScreen } from './View/page/cart';
 
-const Stack = createNativeStackNavigator();
+
 
 export default function App() {
   
+  const Stack = createNativeStackNavigator();
+
   return (
-    <NavigationContainer>
 
-      <Stack.Navigator>
+      <NavigationContainer>
 
-        <Stack.Screen name="home" component={HomeScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="topMenu" component={TopScreen} />
-        <Stack.Screen name="bottomMenu" component={BottomScreen} />
-        <Stack.Screen name="login" component={LoginScreen}  options={{ headerShown: false }}/>
-        <Stack.Screen name="signUp" component={SignupScreen}  options={{ headerShown: false }}/>
-        <Stack.Screen name="wallet" component={WalletScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="recommand" component={RecommandScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="guide" component={GuideScreen} options={{ headerShown: false }} />
-        {/* <Stack.Screen name="realtime" component={RealtimeScreen} options={{headerShown: false}}/> */}
-        <Stack.Screen name="hamberger" component={HambergerScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="account" component={FindAccountScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="search" component={SearchScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="companyDetail" component={CompanyDetailScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="companyDetailBuy" component={CompanyDetailBuyScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="myPage" component={MyPageScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="cart" component={CartScreen} options={{ headerShown: false }} />
+        <Stack.Navigator>
 
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+          <Stack.Screen name="hamberger" component={HambergerScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="topMenu" component={TopScreen} />
+          <Stack.Screen name="bottomMenu" component={BottomScreen} />
+          <Stack.Screen name="home" component={HomeScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="login" component={LoginScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="signUp" component={SignupScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="wallet" component={WalletScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="recommand" component={RecommandScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="guide" component={GuideScreen} options={{ headerShown: false }} />
+          {/* <Stack.Screen name="realtime" component={RealtimeScreen} options={{headerShown: false}}/> */}
+          <Stack.Screen name="account" component={FindAccountScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="search" component={SearchScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="companyDetail" component={CompanyDetailScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="companyDetailBuy" component={CompanyDetailBuyScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="myPage" component={MyPageScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="cart" component={CartScreen} options={{ headerShown: false }} />
+
+        </Stack.Navigator>
+      </NavigationContainer>
+      );
 }
-
-

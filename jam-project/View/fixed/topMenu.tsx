@@ -1,8 +1,7 @@
 import React from 'react';
 import { View, Text, Button, Image, TouchableOpacity } from 'react-native';
 import { Styles, StylesText } from '../style/styles';
-// import {createDrawerNavigator} from '@react-navigation/drawer'
-import Hamberger from './hamberger';
+// import Hamberger from './hamberger_remake';
 
 
 const TopMenu: React.FC<any> = ({ navigation }) => {
@@ -29,7 +28,7 @@ const TopMenu: React.FC<any> = ({ navigation }) => {
         {/* 햄버거 메뉴 이동 */}
         <TouchableOpacity
           style={Styles.hambergerWrap}
-          onPress={() => navigation.openDrawer()}
+          onPress={() => navigation.navigate('hamberger')}
         >
           <View style={Styles.hambergerBar}></View>
           <View style={Styles.hambergerBar}></View>

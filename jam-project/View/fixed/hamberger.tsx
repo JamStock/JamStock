@@ -7,64 +7,47 @@ import LoginScreen from '../page/login';
 import SignupScreen from '../page/signUp';
 
 
-const Hamberger:React.FC<any> = ({navigation}) => {
-  const Drawer = createDrawerNavigator();
-
-  return (
-    <Drawer.Navigator
-      initialRouteName='home'
-      backBehavior='history'
-      screenOptions={{drawerPosition:'right'}}
-    >
-      <Drawer.Screen name="Login" component={LoginScreen} options={{ drawerLabel: 'Login' }} />
-      <Drawer.Screen name="SignUp" component={SignupScreen} options={{ drawerLabel: 'SignUp' }} />
-    </Drawer.Navigator>
-  );
+type HambergerProps = {
+  navigation: any;
 }
 
-// export default Hamberger;
+const Hamberger: React.FC<HambergerProps> = ({ navigation }) => {
+  return (
+    <View style={Styles.hamBox}>
+      <View style={Styles.hamTop}>
+        {/* <Text style={Styles.hamName}>쨈픽 님</Text> */}
+        <TouchableOpacity style={Styles.hamButton} onPress={() => navigation.navigate('signUp')}>
+          <Text style={Styles.hamButtonText}>회원가입</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={Styles.hamButton} onPress={() => navigation.navigate('login')}>
+          <Text style={Styles.hamButtonText}>로그인</Text>
+        </TouchableOpacity> 
+      </View>
 
-// type HambergerProps = {
-//   navigation: any;
-// }
-
-// const Hamberger: React.FC<HambergerProps> = ({ navigation }) => {
-//   return (
-//     <View style={Styles.hamBox}>
-//       <View style={Styles.hamTop}>
-//         {/* <Text style={Styles.hamName}>쨈픽 님</Text> */}
-//         <TouchableOpacity style={Styles.hamButton} onPress={() => navigation.navigate('signUp')}>
-//           <Text style={Styles.hamButtonText}>회원가입</Text>
-//         </TouchableOpacity>
-//         <TouchableOpacity style={Styles.hamButton} onPress={() => navigation.navigate('login')}>
-//           <Text style={Styles.hamButtonText}>로그인</Text>
-//         </TouchableOpacity> 
-//       </View>
-
-//       <View style={Styles.hamCategory}>
-//         <View style={Styles.hamCategoryList}>
-//           <TouchableOpacity style={Styles.hamListWrap} onPress={() => navigation.navigate('myPage')}>
-//             <Text style={Styles.hamListText}>마이페이지</Text>
-//           </TouchableOpacity>
-//           <TouchableOpacity style={Styles.hamListWrap}>
-//             <Text style={Styles.hamListText}>나의 잔고</Text>
-//           </TouchableOpacity>
-//           <TouchableOpacity style={Styles.hamListWrap}>
-//             <Text style={Styles.hamListText}>실시간 정보</Text>
-//           </TouchableOpacity>
-//           <TouchableOpacity style={Styles.hamListWrap}>
-//             <Text style={Styles.hamListText}>주식 추천</Text>
-//           </TouchableOpacity>
-//           <TouchableOpacity style={Styles.hamListWrap}>
-//             <Text style={Styles.hamListText}>종목 검색</Text>
-//           </TouchableOpacity>
-//           <TouchableOpacity style={Styles.hamListWrap}>
-//             <Text style={Styles.hamListText}>용어 가이드</Text>
-//           </TouchableOpacity>
-//         </View>
-//       </View>
-//     </View>
-//   )
-// }
+      <View style={Styles.hamCategory}>
+        <View style={Styles.hamCategoryList}>
+          <TouchableOpacity style={Styles.hamListWrap} onPress={() => navigation.navigate('myPage')}>
+            <Text style={Styles.hamListText}>마이페이지</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={Styles.hamListWrap}>
+            <Text style={Styles.hamListText}>나의 잔고</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={Styles.hamListWrap}>
+            <Text style={Styles.hamListText}>실시간 정보</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={Styles.hamListWrap}>
+            <Text style={Styles.hamListText}>주식 추천</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={Styles.hamListWrap}>
+            <Text style={Styles.hamListText}>종목 검색</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={Styles.hamListWrap}>
+            <Text style={Styles.hamListText}>용어 가이드</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
+  )
+}
 
 export default Hamberger;
