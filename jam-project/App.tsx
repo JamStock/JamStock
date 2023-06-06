@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 // import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Styles, StylesColors } from './View/style/styles';
 import LoginScreen from './View/page/login';
@@ -24,8 +24,10 @@ import { CartScreen } from './View/page/cart';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  
   return (
     <NavigationContainer>
+
       <Stack.Navigator>
 
         <Stack.Screen name="home" component={HomeScreen} options={{ headerShown: false }} />
