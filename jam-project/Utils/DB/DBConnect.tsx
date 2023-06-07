@@ -1,9 +1,9 @@
 import mysql from 'mysql2'
 
 export const DBInfo = mysql.createConnection({
-  host:'121.184.34.150',
-  database:'login',
-  user:'ob',
-  password:'ob',
+  host:'192.168.100.77',
+  database:'jamstock',
+  user:'euni',
+  password:'0000',
   port:3306
 })
