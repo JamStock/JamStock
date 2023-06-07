@@ -43,8 +43,8 @@ for i in range(len(stockCode)):
 #코스닥 종목 코드
 stockData['kosdaq'] = kosdaqData
 
+# print(stockData)
 
 file_path = './stockInfo.json'
 with open(file_path, 'w', encoding='utf-8') as f:
-    json.dump(stockData, f, ensure_ascii=False)
-
+    json.dump(symbols.head().to_json(), f, ensure_ascii=False)
