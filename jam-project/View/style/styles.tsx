@@ -569,14 +569,14 @@ export const Styles = StyleSheet.create({
   },
 
   //! 계정찾기 페이지
-  accountTitle:{
+  accountTitle: {
     width: '75%',
     height: '50%',
     fontSize: 33,
     textAlign: 'center',
     marginLeft: '5%',
   },
-  accountBtn:{
+  accountBtn: {
     width: '35%',
     height: '5%',
     marginTop: '5%',
@@ -632,7 +632,7 @@ export const Styles = StyleSheet.create({
     borderColor: 'red'
 
   },
-  myLoveImage:{
+  myLoveImage: {
     width: '10%',
     height: '90%',
     resizeMode: 'contain',
@@ -640,7 +640,7 @@ export const Styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'red'
   },
-  myLoveListWrap:{
+  myLoveListWrap: {
     width: '95%',
     height: '13%',
     marginTop: '3%',
@@ -648,12 +648,12 @@ export const Styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    
-    
+
+
     borderWidth: 1,
     borderColor: 'red'
   },
-  userLoveListWrap:{
+  userLoveListWrap: {
     width: '95%',
     height: '13%',
     marginTop: '3%',
@@ -661,7 +661,7 @@ export const Styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    
+
     borderWidth: 1,
     borderColor: 'red'
   },
@@ -680,7 +680,7 @@ export const Styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'blue',
   },
-  companyInfo:{
+  companyInfo: {
     width: '100%',
     height: '100%',
     display: 'flex',
@@ -693,7 +693,7 @@ export const Styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'red',
   },
-  companyTitleImg:{
+  companyTitleImg: {
     width: '15%',
     height: '60%',
     resizeMode: 'contain',
@@ -718,7 +718,7 @@ export const Styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'red',
   },
-  companyMoney:{
+  companyMoney: {
     height: '40%',
     fontSize: StylesText.sizeLarge.fontSize,
     textAlign: 'center',
@@ -728,7 +728,7 @@ export const Styles = StyleSheet.create({
     borderColor: 'red',
   },
   companyTabWrap: {
-    width: '100%', 
+    width: '100%',
     height: '15%',
     display: 'flex',
     flexDirection: 'row',
@@ -741,22 +741,22 @@ export const Styles = StyleSheet.create({
   companyTabBtn: {
     width: '24%',
     height: '70%',
-    borderRadius:10,
+    borderRadius: 10,
     backgroundColor: StylesColors.subColorDeep.backgroundColor,
 
     borderWidth: 1,
     borderColor: 'red',
   },
   companyTabText: {
-    height: '40%', 
-    fontSize: StylesText.sizeLarge.fontSize, 
+    height: '40%',
+    fontSize: StylesText.sizeLarge.fontSize,
     textAlign: 'center',
     marginTop: '20%',
   },
 
   //! 회사 소개 부분
   companyIntroWrap: {
-    width: '100%', 
+    width: '100%',
     height: '40%',
     display: 'flex',
     flexDirection: 'row',
@@ -769,7 +769,7 @@ export const Styles = StyleSheet.create({
 
   //! 회사 재무 부분
   companyFinanceWrap: {
-    width: '100%', 
+    width: '100%',
     height: '40%',
     display: 'flex',
     flexDirection: 'row',
@@ -782,7 +782,7 @@ export const Styles = StyleSheet.create({
 
   //! 회사 이자 내역 부분
   companyInterestWrap: {
-    width: '100%', 
+    width: '100%',
     height: '40%',
     display: 'flex',
     flexDirection: 'row',
@@ -792,10 +792,10 @@ export const Styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'red',
   },
-  
+
   //! 종목 상세화면 - 구매
   buyWrap: {
-    width: '100%', 
+    width: '100%',
     height: '40%',
     display: 'flex',
     flexDirection: 'column',
@@ -806,7 +806,7 @@ export const Styles = StyleSheet.create({
     borderColor: 'red',
   },
   buyInputWrap: {
-    width: '95%', 
+    width: '95%',
     height: '15%',
     display: 'flex',
     flexDirection: 'row',
@@ -818,7 +818,7 @@ export const Styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'red',
   },
-  buyInput:{
+  buyInput: {
     width: '25%',
     height: '70%',
     backgroundColor: StylesColors.subColorLight.backgroundColor,
@@ -843,17 +843,17 @@ export const Styles = StyleSheet.create({
     alignItems: 'center',
   },
   buyInfo: {
-    height: '40%', 
-    backgroundColor: StylesColors.subColorDeep.backgroundColor, 
-    borderRadius: 20, 
-    display:'flex', 
-    flexDirection: 'column', 
-    justifyContent: 'space-around', 
+    height: '40%',
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    borderRadius: 20,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
     alignItems: 'center',
     marginLeft: '15%',
     padding: '3%'
   },
-  
+
   // ! 장바구니 
   cartBox: {
     width: "100%",
@@ -1624,6 +1624,39 @@ export const Styles = StyleSheet.create({
     justifyContent: "center",
     marginRight: 20,
     marginTop: 20
+  },
+
+  // ! 알림창(모달창)
+  modalContainer:{
+    flex:1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.5)"
+  },
+  modalBox: {
+    width: 300,
+    height: 300,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor:StylesColors.whiteColor.backgroundColor
+  },
+  modalImage: {
+    width: 100,
+    height: 150,
+    resizeMode:'cover'
+  },
+  modalText: {
+    fontSize: StylesText.sizeSmall.fontSize,
+    textAlign: 'center'
+  },
+  modalCloseButton: {
+    width: 30,
+    height: 20,
+    textAlign: 'center',
+    fontSize: StylesText.sizeSmall.fontSize
   }
+
 
 });
