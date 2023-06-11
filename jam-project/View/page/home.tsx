@@ -3,6 +3,7 @@ import { View, Text, Button, Image, TextInput, TouchableOpacity } from 'react-na
 import { Styles, StylesText } from '../style/styles';
 import TopMenu from '../fixed/topMenu';
 import BottomMenu from '../fixed/bottomMenu';
+import { Alram } from '../../Models/func/alarm';
 
 
 const HomeScreen: React.FC<any> = ({ navigation }) => {
@@ -16,6 +17,7 @@ const HomeScreen: React.FC<any> = ({ navigation }) => {
 
   return (
     <View style={Styles.homeRoot}>
+      {Alram()}
       <TopMenu navigation={navigation} />
       {/*========== home 영역 =========*/}
       <View style={Styles.homeArea}>
