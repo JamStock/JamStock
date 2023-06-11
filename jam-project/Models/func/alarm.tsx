@@ -1,30 +1,64 @@
-import React from 'react'
-import {View, Text, TouchableOpacity} from 'react-native'
+import React, { useEffect, useState } from "react";
+import { View, Image, Modal, Text, TouchableOpacity } from "react-native";
+import { Styles } from "../../View/style/styles";
+import { AlarmRange } from "./alarmRange";
 
 
-export const Alarm = (price:number) => {
-if(price>=200||price<1200){
-  return '../../Resource/Alarm/chupa.png'
-}else if(price>=1200||price<4000){
-  return '../../Resource/Alarm/pc.png'
-}else if(price>=4000||price<8000){
-  return '../../Resource/Alarm/coffee.png'
-}else if(price>=8000||price<15000){
-  return '../../Resource/Alarm/icecream.png'
-}else if(price>=15000||price<25000){
-  return '../../Resource/Alarm/movie.png'
-}else if(price>=25000||price<50000){
-  return '../../Resource/Alarm/chicken.png'
-}else if(price>=50000||price<100000){
-  return '../../Resource/Alarm/jackdaniels.png'
-}else if(price>=100000||price<200000){
-  return '../../Resource/Alarm/shoes.png'
-}else if(price>=200000||price<500000){
-  return '../../Resource/Alarm/kingcrab.png'
-}else if(price>=200000||price<500000){
-  return '../../Resource/Alarm/wallet.png'
-}else if(price>=1000000){
-  return '../../Resource/Alarm/jeju.png'
-}
+export const Alram = () => {
+  // 유저의 잔고 금액+유저 설정 % 를 보고 알림을 띄워줘야함.
+  // 기준치가 넘으면 모달을 띄울거니까 아래 모달만 쓰면 되지않나.
+
+  // ! modal on/off 용
+  const [alarmModal, setAlarmModal] = useState(true)
+  // 기본으로 꺼두고, 기준치가 되면 true로 바껴야함.
+
+  // 기준 금액
+  let range = 50000
+  
+  let image = `'file:///${AlarmRange(range).url}'`
+  // 값을 비교하는 로직을 이곳에 넣고, 해당 값이 되면 반환을 만듦되징
+
+  console.log(image)
+
+  // useEffect(() => {
+  //   setAlarmModal(false)
+  // }, [])
+
+  // 안드로이드 하드웨어 백버튼 클릭 시 모달 닫히기.
+  return (
+    <View>
+      <Modal
+        visible={alarmModal}
+        animationType="fade"
+        transparent={true}
+        onRequestClose={() => {
+          setAlarmModal(false)
+        }}
+      >
+        <View style={Styles.modalContainer}>
+          <View style={Styles.modalBox}>
+
+            <Image
+              style={Styles.modalImage}
+              source={{ uri: image }}
+            />
+
+            <Text style={Styles.modalText}>
+              축하합니다! {"\n"}
+              {AlarmRange(range).item}{"\n"}
+            </Text>
+
+            <TouchableOpacity
+              style={Styles.modalCloseButton}
+              onPress={() => setAlarmModal(false)}
+            >
+              <Text>닫기</Text>
+            </TouchableOpacity>
+          </View>
+
+        </View>
+      </Modal>
+    </View>
+  )
 
 }
