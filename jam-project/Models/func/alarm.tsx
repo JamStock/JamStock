@@ -3,7 +3,6 @@ import { View, Image, Modal, Text, TouchableOpacity } from "react-native";
 import { Styles } from "../../View/style/styles";
 import { AlarmRange } from "./alarmRange";
 
-
 export const Alram = () => {
   // 유저의 잔고 금액+유저 설정 % 를 보고 알림을 띄워줘야함.
   // 기준치가 넘으면 모달을 띄울거니까 아래 모달만 쓰면 되지않나.
@@ -13,12 +12,10 @@ export const Alram = () => {
   // 기본으로 꺼두고, 기준치가 되면 true로 바껴야함.
 
   // 기준 금액
-  let range = 50000
+  // let range = 50000
   
-  let image = `'file:///${AlarmRange(range).url}'`
   // 값을 비교하는 로직을 이곳에 넣고, 해당 값이 되면 반환을 만듦되징
 
-  console.log(image)
 
   // useEffect(() => {
   //   setAlarmModal(false)
@@ -40,7 +37,7 @@ export const Alram = () => {
 
             <Image
               style={Styles.modalImage}
-              source={{ uri: image }}
+              source={AlarmRange(range).url}
             />
 
             <Text style={Styles.modalText}>
