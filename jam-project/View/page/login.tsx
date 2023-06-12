@@ -3,7 +3,7 @@ import { View, Text, Button, Image, TextInput, TouchableOpacity, Alert } from 'r
 import { Styles, StylesText } from '../style/styles';
 import Icon from 'react-native-vector-icons/AntDesign'
 import { response } from 'express';
-import { loginResult } from '../../Utils/Token/token';
+import { loginResult } from '../../Models/func/loginCheck';
 
 
 const LoginScreen: React.FC<any> = ({ navigation }) => {
