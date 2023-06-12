@@ -11,7 +11,7 @@ export const ResetPassword=(id:string,email:string,password:string)=>{
     password:password
   }
 
-  fetch('http://192.168.30.76:3080/resetPassword',{
+  fetch('http://121.184.34.150:3080/resetPassword',{
   method:'POST',
   body:JSON.stringify(resetPassword)
   })

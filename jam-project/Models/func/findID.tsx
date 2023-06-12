@@ -10,7 +10,7 @@ export const findID=(email:string,birthday:string)=>{
 
   console.log('여기는 findID입니다.'+findID.email)
 
-  fetch('http://192.168.12.52:3080/findID',{
+  fetch('http://121.184.34.150:3080/findID',{
   method:'POST',
   body:JSON.stringify(findID)
   })
