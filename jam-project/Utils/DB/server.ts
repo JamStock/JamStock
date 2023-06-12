@@ -24,7 +24,7 @@ app.post('/login', (req: Request, res: Response) => {
 
 
     // 쿼리문으로 해당 아이디가 유저 목록에 있는지 확인
-    DBInfo.query(`select * from userinfo where ID='${loginDataid}'`, (error, result) => {
+    DBInfo.query(`select id, password from userinfo where ID='${loginDataid}'`, (error, result) => {
       // console.log(result)
 
       // 결과값을 전달.
