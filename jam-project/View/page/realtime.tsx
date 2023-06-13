@@ -17,7 +17,6 @@ const companylist = (data: Companydata) => {
   return (
     <View style={Styles.rankingCompany}>
       <TouchableOpacity style={Styles.rankingCompanyName}>
-        <Image style={{}} source={require("")} />
         <Text style={Styles.rankingCompanyText}>{data.companyname}</Text>
       </TouchableOpacity>
       <View style={Styles.rankingCompanyPrice}>

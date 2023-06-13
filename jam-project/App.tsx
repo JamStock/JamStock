@@ -12,7 +12,7 @@ import TopScreen from './View/fixed/topMenu'
 import BottomScreen from './View/fixed/bottomMenu';
 import WalletScreen from './View/page/wallet';
 import RecommandScreen from './View/page/recommand'
-// import {RealtimeScreen} from './View/page/realtime'
+import {RealtimeScreen} from './View/page/realtime'
 import { GuideScreen } from './View/page/guide';
 import HambergerScreen from './View/fixed/hamberger';
 import FindAccountScreen from './View/page/findAccount';
@@ -39,7 +39,7 @@ export default function App() {
         <Stack.Screen name="wallet" component={WalletScreen} options={{ headerShown: false }} />
         <Stack.Screen name="recommand" component={RecommandScreen} options={{ headerShown: false }} />
         <Stack.Screen name="guide" component={GuideScreen} options={{ headerShown: false }} />
-        {/* <Stack.Screen name="realtime" component={RealtimeScreen} options={{headerShown: false}}/> */}
+        <Stack.Screen name="realtime" component={RealtimeScreen} options={{headerShown: false}}/>
         <Stack.Screen name="hamberger" component={HambergerScreen} options={{ headerShown: false }} />
         <Stack.Screen name="account" component={FindAccountScreen} options={{ headerShown: false }} />
         <Stack.Screen name="search" component={SearchScreen} options={{ headerShown: false }} />

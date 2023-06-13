@@ -30,7 +30,7 @@ const Hamberger: React.FC<HambergerProps> = ({ navigation }) => {
           <TouchableOpacity style={Styles.hamListWrap} onPress={() => navigation.navigate('wallet')}>
             <Text style={Styles.hamListText}>나의 지갑</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={Styles.hamListWrap} onPress={() => navigation.navigate('myPage')}>
+          <TouchableOpacity style={Styles.hamListWrap} onPress={() => navigation.navigate('realtime')}>
             <Text style={Styles.hamListText}>실시간 정보</Text>
           </TouchableOpacity>
           <TouchableOpacity style={Styles.hamListWrap} onPress={() => navigation.navigate('recommand')}>
