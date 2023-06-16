@@ -7,43 +7,45 @@ import url from '../func/fetchURL'
 import { callUser } from '../../Utils/Storage/callID'
 
 export const Entrance = () => {
-let [entrance, setEntrance] = useState(false)
+  let [entrance, setEntrance] = useState(true)
 
-fetch(`${url}/entrance`, {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'aplication/json'
-  },
-  body: JSON.stringify(callUser()[0])
-})
-  .then(response => response.json())
-  .then(data => {
-    console.log("온게없을텐데", data)
-  }).catch(err => console.error('warning!' + err))
+  fetch(`${url}/entrance`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'aplication/json'
+    },
+    body: JSON.stringify(callUser()[0])
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log("온게없을텐데", data)
+    }).catch(err => console.error('warning!' + err))
 
 
   return (
-  <View style={Styles.entranceBox}>
-    <Modal
-      visible={entrance}
-      animationType="fade"
-      transparent={false}
-      onRequestClose={() => {
-        setEntrance(true)
-      }}
-    >
-      <Text>
-        안녕하세요!{"\n"}
-        JamStock에 오신 걸 환영합니다!{"\n"}
-        저는 JamStock의 마스코트 쨈픽입니다!
-      </Text>
-      <TouchableOpacity
-
+    <View>
+      <Modal
+        visible={entrance}
+        animationType="fade"
+        transparent={true}
+        onRequestClose={() => {
+          setEntrance(false)
+        }}
       >
-        <Icon name="doubleright" />
-      </TouchableOpacity>
-    </Modal>
+        <View style={Styles.entranceBox}>
+          <Text style={Styles.entranceText}>
+            안녕하세요!{"\n"}
+            JamStock에 오신 걸 환영합니다!{"\n"}
+            저는 JamStock의 마스코트 쨈픽입니다!
+          </Text>
+          <TouchableOpacity
+            onPress={() => { setEntrance(false) }}
+          >
+            <Icon name="doubleright" />
+          </TouchableOpacity>
+        </View>
+      </Modal>
 
-  </View>
+    </View>
   )
 }

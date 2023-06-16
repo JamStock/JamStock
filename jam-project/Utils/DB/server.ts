@@ -187,7 +187,7 @@ app.post('/entrance',(req,res)=>{
     DBInfo.query(`select firstentrance from ${user}`,(err,result)=>{
       console.log(result)
       // if(result===0){
-      res.json('dkdkdkd')
+      res.json(result)
       // }
     })
 

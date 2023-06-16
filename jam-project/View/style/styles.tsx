@@ -1620,12 +1620,18 @@ export const Styles = StyleSheet.create({
 
   // ! 첫 입장 모달창
   entranceBox:{
-    width:400,
-    height:300,
-    display:'flex',
-    flexDirection:'column',
-    // alignItems:''
+    flex:1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.5)"
   },
+  entranceText:{
+    width:240,
+    height:80,
+    backgroundColor:StylesColors.whiteColor.backgroundColor
+
+  }
+
   
 
 });

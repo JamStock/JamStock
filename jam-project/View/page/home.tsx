@@ -6,9 +6,7 @@ import BottomMenu from '../fixed/bottomMenu';
 import Url from '../../Models/func/fetchURL'
 import { Entrance } from '../../Models/Modal/firstEntrance';
 
-const HomeScreen: React.FC<any> = ({ navigation }) => {
-
-  
+const HomeScreen: React.FC<any> = ({ navigation }) => {  
 
   const [searchText, setSearchText] = useState('');
 
