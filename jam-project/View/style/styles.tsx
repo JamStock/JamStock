@@ -602,15 +602,16 @@ export const Styles = StyleSheet.create({
   myLoveCpy: {
     width: '100%',
     height: '100%',
-    backgroundColor: StylesColors.subColorLight.backgroundColor,
     display: 'flex',
     flexDirection: 'column',
     // justifyContent: 'center',
+    // marginTop: '3%',
     alignItems: 'center',
+    padding: '1%',
     flex:1,
 
-    borderWidth: 1,
-    borderColor: 'red'
+    // borderWidth: 1,
+    // borderColor: 'red'
   },
   userLoveCpy: {
     width: '100%',
@@ -627,12 +628,13 @@ export const Styles = StyleSheet.create({
   },
   searchListText: {
     // width: '40%',
-    height: '80%',
-    fontSize: StylesText.sizeMedium.fontSize,
+    // height: '80%',
+    fontSize: StylesText.sizeSmall.fontSize,
     textAlign: 'center',
+    marginTop: '2%'
 
-    borderWidth: 1,
-    borderColor: 'red'
+    // borderWidth: 1,
+    // borderColor: 'red'
 
   },
   myLoveImage:{
@@ -644,17 +646,16 @@ export const Styles = StyleSheet.create({
     borderColor: 'red'
   },
   myLoveListWrap:{
-    width: '95%',
-    height: '13%',
-    marginTop: '3%',
+    width: '100%',
+    height: '100%',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-evenly',
     alignItems: 'center',
     
     
-    borderWidth: 1,
-    borderColor: 'red'
+    // borderWidth: 1,
+    // borderColor: 'red'
   },
   userLoveListWrap:{
     width: '95%',

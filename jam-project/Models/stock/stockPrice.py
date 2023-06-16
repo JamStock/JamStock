@@ -52,14 +52,15 @@ def post_stockSearch():
     searchPrice = []
     searchCode = []
     for market, stocks in kis.market.stock_search(keywoard).items():
-        print(f' - - - {market} - - - ')
+        #print(f' - - - {market} - - - ')
         for stock in stocks:
-            print(stock.mksc_shrn_iscd, stock.hts_kor_isnm)
+            #print(stock.mksc_shrn_iscd, stock.hts_kor_isnm)
             stock = kis.stock(stock.mksc_shrn_iscd)
             price = stock.price()
-            searchName.append(stock.name)
-            searchCode.append(stock.code)
-            searchPrice.append(price.stck_prpr)
+            if market == 'kospi':
+                searchName.append(stock.name)
+                searchCode.append(stock.code)
+                searchPrice.append(price.stck_prpr)
 
     key = "searchResult"
     value = {

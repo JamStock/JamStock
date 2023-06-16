@@ -31,8 +31,6 @@ const HomeScreen: React.FC<any> = ({ navigation }) => {
     });
   },[])
   
-  
-
   return (
     
     <View style={Styles.homeRoot}>

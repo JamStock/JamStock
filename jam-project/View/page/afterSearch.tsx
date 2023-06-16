@@ -4,7 +4,8 @@ import { View, Text, Button, Image, TextInput, TouchableOpacity, FlatList } from
 import { Styles, StylesColors, StylesText } from '../style/styles';
 import TopMenu from '../fixed/topMenu';
 import BottomMenu from '../fixed/bottomMenu';
-import urlIpt from '../../Models/func/fetchURL'
+import urlIpt from '../../Models/func/fetchURL';
+import changeCurr from '../../Models/func/changeCurrency';
 
 
 interface Searchdata {
@@ -15,7 +16,7 @@ interface Searchdata {
 let result = [] as any
 
 const ListStyle = (data: Searchdata) => {
-  console.log("akajsskskks: ", result)
+  // console.log("akajsskskks: ", result)
 
   return (
     <View style={Styles.myLoveCpy}>
@@ -50,7 +51,7 @@ const AfterSearchScreen: React.FC<any> = ({ navigation, route }) => {
           for (let i = 0; i < json["name"].length; i++) {
             let val = {
               companyname: json.name[i],
-              price: json.prpr[i],
+              price: changeCurr(json.prpr[i]),
             }
             result.push(val)
           }
@@ -69,32 +70,28 @@ const AfterSearchScreen: React.FC<any> = ({ navigation, route }) => {
 
   useEffect(() => {
     fetchData()
+    setSearch('');
   }, [])
 
-  
-  
   return (
     <View style={Styles.homeRoot}>
       <TopMenu navigation={navigation} />
 
       {/*========== search 영역 =========*/}
       <View style={Styles.homeArea}>
-        <View style={{ width: '100%', height: '10%', backgroundColor: StylesColors.subColorLight.backgroundColor, marginTop: '7%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-          <View style={{ width: '95%', height: '70%', backgroundColor: StylesColors.whiteColor.backgroundColor, borderRadius: 20, display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-            <TextInput
-              style={Styles.serchBar}
-              onChangeText={text => setSearch(text)}
-              value={search}
-              placeholder="검색"
-            />
-            <TouchableOpacity style={Styles.serchButton} onPress={handleSearch}>
-              <Text style={Styles.serchButtonText}>serch</Text>
-            </TouchableOpacity>
-          </View>
+        <View style={Styles.serchBox}>
+          <TextInput
+            style={Styles.serchBar}
+            onChangeText={text => setSearch(text)}
+            value={searchText}
+            placeholder="검색"
+          />
+          <TouchableOpacity style={Styles.serchButton} onPress={handleSearch}>
+            <Text style={Styles.serchButtonText}>serch</Text>
+          </TouchableOpacity>
         </View>
-        <View style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1, borderWidth: 1, borderColor: 'red' }}>
-
-          {/* 내가 찜한 기업 영역 */}
+    
+        <View style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1, backgroundColor: StylesColors.subColorLight.backgroundColor, borderWidth: 1, marginTop:'3%'}}>
           <FlatList
             data={result}
             renderItem={({ item }) => ListStyle(item)} />
