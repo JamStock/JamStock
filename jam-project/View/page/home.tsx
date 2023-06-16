@@ -4,6 +4,7 @@ import { Styles, StylesText } from '../style/styles';
 import TopMenu from '../fixed/topMenu';
 import BottomMenu from '../fixed/bottomMenu';
 import Url from '../../Models/func/fetchURL'
+import { Entrance } from '../../Models/Modal/firstEntrance';
 
 const HomeScreen: React.FC<any> = ({ navigation }) => {
 
@@ -34,8 +35,8 @@ const HomeScreen: React.FC<any> = ({ navigation }) => {
   
 
   return (
-    
     <View style={Styles.homeRoot}>
+      {Entrance()}
       <TopMenu navigation={navigation} />
       {/*========== home 영역 =========*/}
       <View style={Styles.homeArea}>
