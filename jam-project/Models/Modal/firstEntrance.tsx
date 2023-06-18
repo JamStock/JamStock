@@ -1,26 +1,13 @@
 import React, { useState } from "react";
-import { Modal, View, Image, Text, TouchableOpacity } from "react-native";
+import { Modal, View, Image, TouchableOpacity } from "react-native";
 import { Styles } from "../../View/style/styles";
-import { response } from "express";
 import Icon from "react-native-vector-icons/AntDesign";
-import url from '../func/fetchURL'
-import { callUser } from '../../Utils/Storage/callID'
+import { changeMessage } from "./modalMessage";
 
-export const Entrance = () => {
-  let [entrance, setEntrance] = useState(true)
+export const Entrance = (userid: string) => {
 
-  fetch(`${url}/entrance`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'aplication/json'
-    },
-    body: JSON.stringify(callUser()[0])
-  })
-    .then(response => response.json())
-    .then(data => {
-      console.log("온게없을텐데", data)
-    }).catch(err => console.error('warning!' + err))
-
+  const [entrance, setEntrance] = useState(true)
+  const [count, setCount] = useState(0)
 
   return (
     <View>
@@ -28,21 +15,29 @@ export const Entrance = () => {
         visible={entrance}
         animationType="fade"
         transparent={true}
-        onRequestClose={() => {
-          setEntrance(false)
-        }}
       >
         <View style={Styles.entranceBox}>
-          <Text style={Styles.entranceText}>
-            안녕하세요!{"\n"}
-            JamStock에 오신 걸 환영합니다!{"\n"}
-            저는 JamStock의 마스코트 쨈픽입니다!
-          </Text>
-          <TouchableOpacity
-            onPress={() => { setEntrance(false) }}
-          >
-            <Icon name="doubleright" />
-          </TouchableOpacity>
+          <View style={Styles.entranceTextBox}>
+            {
+              changeMessage(count, userid)
+            }
+            <TouchableOpacity
+              style={{
+                width: "95%", height: "20%", display: "flex", flexDirection: "row-reverse",
+              }}
+              onPress={() => {
+                if (count > 1) {
+                  // 지갑에 5백만원 들어가는 로직+옵션도 집어넣어버렷
+                  setEntrance(false)
+                } else {
+                  setCount(prevCount => prevCount + 1)
+                }
+              }}
+            >
+              <Icon name="doubleright" />
+            </TouchableOpacity>
+          </View>
+          <Image style={Styles.entranceImage} source={require('../../Resource/Icon/JamStock_Pig2.png')} />
         </View>
       </Modal>
 

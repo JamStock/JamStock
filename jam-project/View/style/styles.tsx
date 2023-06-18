@@ -543,9 +543,9 @@ export const Styles = StyleSheet.create({
 
   },
   //! 회원가입 - 유효성 검사 멘트
-  signUpValidation:{
-    fontSize: StylesText.sizeSmall.fontSize, 
-    textAlign: 'center', 
+  signUpValidation: {
+    fontSize: StylesText.sizeSmall.fontSize,
+    textAlign: 'center',
     marginTop: 9
   },
   //! 회원가입, 계정찾기 쪽 버튼
@@ -571,14 +571,14 @@ export const Styles = StyleSheet.create({
   },
 
   //! 계정찾기 페이지
-  accountTitle:{
+  accountTitle: {
     width: '75%',
     height: '50%',
     fontSize: 33,
     textAlign: 'center',
     marginLeft: '5%',
   },
-  accountBtn:{
+  accountBtn: {
     width: '35%',
     height: '5%',
     marginTop: '5%',
@@ -634,7 +634,7 @@ export const Styles = StyleSheet.create({
     borderColor: 'red'
 
   },
-  myLoveImage:{
+  myLoveImage: {
     width: '10%',
     height: '90%',
     resizeMode: 'contain',
@@ -642,7 +642,7 @@ export const Styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'red'
   },
-  myLoveListWrap:{
+  myLoveListWrap: {
     width: '95%',
     height: '13%',
     marginTop: '3%',
@@ -650,12 +650,12 @@ export const Styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    
-    
+
+
     borderWidth: 1,
     borderColor: 'red'
   },
-  userLoveListWrap:{
+  userLoveListWrap: {
     width: '95%',
     height: '13%',
     marginTop: '3%',
@@ -663,7 +663,7 @@ export const Styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    
+
     borderWidth: 1,
     borderColor: 'red'
   },
@@ -680,7 +680,7 @@ export const Styles = StyleSheet.create({
     top: '8%',
 
   },
-  companyInfo:{
+  companyInfo: {
     height: '100%',
     display: 'flex',
     flexDirection: 'row',
@@ -697,10 +697,10 @@ export const Styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     resizeMode: 'contain',
-    
+
 
   },
-  companyMoney:{
+  companyMoney: {
     fontSize: StylesText.sizeLarge.fontSize,
     textAlign: 'center',
     marginLeft: '2%',
@@ -709,7 +709,7 @@ export const Styles = StyleSheet.create({
 
   },
   companyTabWrap: {
-    width: '100%', 
+    width: '100%',
     height: '15%',
     display: 'flex',
     flexDirection: 'row',
@@ -722,31 +722,31 @@ export const Styles = StyleSheet.create({
   companyTabBtn: {
     width: '24%',
     height: '70%',
-    borderRadius:10,
+    borderRadius: 10,
     backgroundColor: StylesColors.subColorDeep.backgroundColor,
 
     borderWidth: 1,
     borderColor: 'red',
   },
   companyTabText: {
-    height: '40%', 
-    fontSize: StylesText.sizeLarge.fontSize, 
+    height: '40%',
+    fontSize: StylesText.sizeLarge.fontSize,
     textAlign: 'center',
     marginTop: '20%',
   },
   companyCont: {
-    width: '100%', 
-    height: '100%', 
-    position: 'absolute', 
-    top: '18%', 
-    backgroundColor: StylesColors.subColorLight.backgroundColor, 
-    borderWidth: 1, 
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
+    top: '18%',
+    backgroundColor: StylesColors.subColorLight.backgroundColor,
+    borderWidth: 1,
     borderColor: 'green',
   },
 
   //! 회사 소개 부분
   companyIntroWrap: {
-    width: '100%', 
+    width: '100%',
     height: '40%',
     display: 'flex',
     flexDirection: 'row',
@@ -759,7 +759,7 @@ export const Styles = StyleSheet.create({
 
   //! 회사 재무 부분
   companyFinanceWrap: {
-    width: '100%', 
+    width: '100%',
     height: '40%',
     display: 'flex',
     flexDirection: 'row',
@@ -772,7 +772,7 @@ export const Styles = StyleSheet.create({
 
   //! 회사 이자 내역 부분
   companyInterestWrap: {
-    width: '100%', 
+    width: '100%',
     height: '40%',
     display: 'flex',
     flexDirection: 'row',
@@ -782,10 +782,10 @@ export const Styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'red',
   },
-  
+
   //! 종목 상세화면 - 구매
   buyWrap: {
-    width: '100%', 
+    width: '100%',
     height: '40%',
     display: 'flex',
     flexDirection: 'column',
@@ -796,7 +796,7 @@ export const Styles = StyleSheet.create({
     borderColor: 'red',
   },
   buyInputWrap: {
-    width: '95%', 
+    width: '95%',
     height: '15%',
     display: 'flex',
     flexDirection: 'row',
@@ -808,7 +808,7 @@ export const Styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'red',
   },
-  buyInput:{
+  buyInput: {
     width: '25%',
     height: '70%',
     backgroundColor: StylesColors.subColorLight.backgroundColor,
@@ -833,17 +833,17 @@ export const Styles = StyleSheet.create({
     alignItems: 'center',
   },
   buyInfo: {
-    height: '40%', 
-    backgroundColor: StylesColors.subColorDeep.backgroundColor, 
-    borderRadius: 20, 
-    display:'flex', 
-    flexDirection: 'column', 
-    justifyContent: 'space-around', 
+    height: '40%',
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
+    borderRadius: 20,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
     alignItems: 'center',
     marginLeft: '15%',
     padding: '3%'
   },
-  
+
   // ! 장바구니 
   cartBox: {
     width: "100%",
@@ -1235,7 +1235,7 @@ export const Styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    
+
   },
 
   rankingList: {
@@ -1619,19 +1619,35 @@ export const Styles = StyleSheet.create({
   },
 
   // ! 첫 입장 모달창
-  entranceBox:{
-    flex:1,
+  entranceBox: {
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "rgba(0, 0, 0, 0.5)"
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    position:'relative'
   },
-  entranceText:{
-    width:240,
-    height:80,
-    backgroundColor:StylesColors.whiteColor.backgroundColor
-
+  entranceTextBox: {
+    width: 290,
+    height: 120,
+    backgroundColor: StylesColors.whiteColor.backgroundColor,
+    fontSize: StylesText.sizeSmall.fontSize,
+    padding: 10,
+    paddingTop: 11,
+    borderRadius: 25,
+    display: 'flex',
+    flexDirection: 'column'
+  },
+  entranceText: {
+    width: "95%",
+    height: "80%",
+  },
+  entranceImage:{
+    width: 60,
+    height:60,
+    right:100,
+    top:8
   }
 
-  
+
 
 });

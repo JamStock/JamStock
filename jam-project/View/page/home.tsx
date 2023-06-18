@@ -5,9 +5,13 @@ import TopMenu from '../fixed/topMenu';
 import BottomMenu from '../fixed/bottomMenu';
 import Url from '../../Models/func/fetchURL'
 import { Entrance } from '../../Models/Modal/firstEntrance';
+import { callUser } from "../../Utils/Storage/callID";
 
-const HomeScreen: React.FC<any> = ({ navigation }) => {  
 
+const HomeScreen: React.FC<any> = ({ navigation }) => {
+  
+  const userid = callUser()[0]
+  const times = callUser()[2]
   const [searchText, setSearchText] = useState('');
 
   const handleSearch = () => {
@@ -18,23 +22,24 @@ const HomeScreen: React.FC<any> = ({ navigation }) => {
 
   const [data, setData] = useState(null);
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch(`${Url}:5000/stock/data`)
-    .then(response => response.json())
-    .then(json => {
-      console.log("구매 인기 정상적으로 가져옴")
-      setData(json);
-    })
-    .catch(error => {
-      console.error('에러가 발생했습니다::: ', error);
-    });
-  },[])
-  
-  
+      .then(response => response.json())
+      .then(json => {
+        console.log("구매 인기 정상적으로 가져옴")
+        setData(json);
+      })
+      .catch(error => {
+        console.error('에러가 발생했습니다::: ', error);
+      });
+  }, [])
+
+  console.log("여긴 home 함수내", times)
+
 
   return (
     <View style={Styles.homeRoot}>
-      {Entrance()}
+      {Entrance(userid)}
       <TopMenu navigation={navigation} />
       {/*========== home 영역 =========*/}
       <View style={Styles.homeArea}>
@@ -53,7 +58,7 @@ const HomeScreen: React.FC<any> = ({ navigation }) => {
           <View style={Styles.homePopular}>
             <Text style={Styles.titleText}>Today 구매 인기 기업</Text>
             {data && (
-              <TouchableOpacity onPress={() => navigation.navigate('companyDetail', { 
+              <TouchableOpacity onPress={() => navigation.navigate('companyDetail', {
                 name: data["거래상위"]["name"][0],
                 code: data["거래상위"]["code"][0]
               })}>
@@ -63,7 +68,7 @@ const HomeScreen: React.FC<any> = ({ navigation }) => {
               </TouchableOpacity>
             )}
             {data && (
-              <TouchableOpacity onPress={() => navigation.navigate('companyDetail', { 
+              <TouchableOpacity onPress={() => navigation.navigate('companyDetail', {
                 name: data["거래상위"]["name"][1],
                 code: data["거래상위"]["code"][1]
               })}>
@@ -72,9 +77,9 @@ const HomeScreen: React.FC<any> = ({ navigation }) => {
                 </View>
               </TouchableOpacity>
             )}
-            
+
             {data && (
-              <TouchableOpacity onPress={() => navigation.navigate('companyDetail', { 
+              <TouchableOpacity onPress={() => navigation.navigate('companyDetail', {
                 name: data["거래상위"]["name"][2],
                 code: data["거래상위"]["code"][2]
               })}>
@@ -84,7 +89,7 @@ const HomeScreen: React.FC<any> = ({ navigation }) => {
               </TouchableOpacity>
             )}
             {data && (
-              <TouchableOpacity onPress={() => navigation.navigate('companyDetail', { 
+              <TouchableOpacity onPress={() => navigation.navigate('companyDetail', {
                 name: data["거래상위"]["name"][3],
                 code: data["거래상위"]["code"][3]
               })}>
@@ -94,7 +99,7 @@ const HomeScreen: React.FC<any> = ({ navigation }) => {
               </TouchableOpacity>
             )}
             {data && (
-              <TouchableOpacity onPress={() => navigation.navigate('companyDetail', { 
+              <TouchableOpacity onPress={() => navigation.navigate('companyDetail', {
                 name: data["거래상위"]["name"][4],
                 code: data["거래상위"]["code"][4]
               })}>
@@ -103,7 +108,7 @@ const HomeScreen: React.FC<any> = ({ navigation }) => {
                 </View>
               </TouchableOpacity>
             )}
-            
+
           </View>
           <View style={Styles.homeLove}>
             <Text style={Styles.titleText}>Today 사랑받는 기업</Text>
