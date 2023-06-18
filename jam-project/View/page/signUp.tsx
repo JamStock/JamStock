@@ -6,6 +6,7 @@ import SignUpCheck from '../../Models/account/signUpCheck';
 import { response } from 'express';
 import { pattern, patternBirthday, patternEmail, patternNincName, inputLength } from '../../Models/account/RegExp';
 import Url from '../../Models/func/fetchURL'
+import { count } from 'console';
 
 
 let id: boolean ;
@@ -325,7 +326,6 @@ const SignupScreen: React.FC<any> = ({ navigation }) => {
       {/* 회원가입 완료 버튼 */}
       <TouchableOpacity style={Styles.signUpNFindBtn} onPress={() => {
         signUpCheck()
-
       }}>
         <Text style={{ fontSize: StylesText.sizeMedium.fontSize, textAlign: 'center', marginTop: 9 }}>가입 완료</Text>
       </TouchableOpacity>
