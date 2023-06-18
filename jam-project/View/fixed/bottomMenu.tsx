@@ -10,7 +10,7 @@ const BottomMenu: React.FC<any> = ({ navigation }) => {
   useEffect(() => {
     const checkLogin = async () => {
       const loginCheck = await getLoginInfo('nickname');
-      console.log("여긴 하단부",loginCheck)
+      // console.log("여긴 하단부",loginCheck)
       if (loginCheck !== null) {
         SetmenuState(false);
         // 로그인 후 스토리지에서 닉네임 가져오기

@@ -1,13 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Modal, View, Image, TouchableOpacity } from "react-native";
 import { Styles } from "../../View/style/styles";
 import Icon from "react-native-vector-icons/AntDesign";
 import { changeMessage } from "./modalMessage";
+import { callUser } from "../../Utils/Storage/callID";
 
-export const Entrance = (userid: string) => {
+// 무한 렌더 오류발생으로 
+export const Entrance = () => {
+  // const userid = callUser()[0]
+  // const times = callUser()[2]
+  const [userid, , times] = useMemo(() => callUser(), [])
 
   const [entrance, setEntrance] = useState(true)
   const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    if (times !== "true") {
+      setEntrance(false)
+    } else {
+      setEntrance(true)
+    }
+  }, [times])
 
   return (
     <View>

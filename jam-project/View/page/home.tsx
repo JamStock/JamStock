@@ -5,13 +5,14 @@ import TopMenu from '../fixed/topMenu';
 import BottomMenu from '../fixed/bottomMenu';
 import Url from '../../Models/func/fetchURL'
 import { Entrance } from '../../Models/Modal/firstEntrance';
-import { callUser } from "../../Utils/Storage/callID";
+// import { callUser } from "../../Utils/Storage/callID";
 
 
 const HomeScreen: React.FC<any> = ({ navigation }) => {
-  
-  const userid = callUser()[0]
-  const times = callUser()[2]
+
+  // const userid = callUser()[0]
+  // const times = callUser()[2]
+
   const [searchText, setSearchText] = useState('');
 
   const handleSearch = () => {
@@ -32,14 +33,13 @@ const HomeScreen: React.FC<any> = ({ navigation }) => {
       .catch(error => {
         console.error('에러가 발생했습니다::: ', error);
       });
-  }, [])
 
-  console.log("여긴 home 함수내", times)
+  }, [])
 
 
   return (
     <View style={Styles.homeRoot}>
-      {Entrance(userid)}
+      {/* {Entrance()} */}
       <TopMenu navigation={navigation} />
       {/*========== home 영역 =========*/}
       <View style={Styles.homeArea}>
@@ -138,13 +138,3 @@ const HomeScreen: React.FC<any> = ({ navigation }) => {
 };
 
 export default HomeScreen;
-
-
-// fetch("http://localhost:3008/home", {
-//     method: "POST",
-//   })
-//   .then((response) => response.json())
-//   .then((result) => {
-//     console.log("count: ", result)
-
-//   })
