@@ -9,7 +9,7 @@ const BottomMenu: React.FC<any> = ({ navigation }) => {
 
   useEffect(() => {
     const checkLogin = async () => {
-      const loginCheck = await getLoginInfo();
+      const loginCheck = await getLoginInfo('nickname');
       console.log("여긴 하단부",loginCheck)
       if (loginCheck !== null) {
         SetmenuState(false);
