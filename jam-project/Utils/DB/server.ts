@@ -26,7 +26,7 @@ app.post('/login', (req: Request, res: Response) => {
 
 
     // 쿼리문으로 해당 아이디가 유저 목록에 있는지 확인
-    DBInfo.query(`select ID, password, nickname from userinfo where ID='${loginDataid}'`, (error, result) => {
+    DBInfo.query(`select ID, password, nickname, firstentrance from userinfo where ID='${loginDataid}'`, (error, result) => {
       // console.log(result)
 
       // 결과값을 전달.
@@ -177,19 +177,20 @@ app.post('/myPage', (req: Request, res: Response) => {
 })
 
 // 최초 입장 여부 DB 확인
-app.post('/entrance',(req,res)=>{
+app.post('/entrance',(req: Request, res: Response)=>{
   let datas = ''
   req.on('data', (data)=>{
     datas+=data
   })
   req.on('end',()=>{
     const user = JSON.parse(datas)
-    DBInfo.query(`select firstentrance from ${user}`,(err,result)=>{
-      console.log(result)
-      // if(result===0){
-      res.json(result)
-      // }
-    })
+    console.log("DB : ", user)
+    // DBInfo.query(`select firstentrance from ${user}`,(err,result)=>{
+    //   console.log(result)
+    //   // if(result===0){
+    //   res.json(result)
+    //   // }
+    // })
 
   })
 })
