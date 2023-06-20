@@ -166,8 +166,6 @@ export const Styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    borderWidth: 1,
-    borderColor: 'red',
     position: 'relative',
     flex: 1
   },
@@ -178,8 +176,6 @@ export const Styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    borderWidth: 1,
-    borderColor: 'blue',
     position: 'relative',
   },
   homeWrap: {
@@ -195,8 +191,6 @@ export const Styles = StyleSheet.create({
     height: '45%',
     backgroundColor: StylesColors.subColorLight.backgroundColor,
     borderRadius: 20,
-    borderWidth: 1,
-    borderColor: 'red'
   },
   titleText: {
     marginTop: 20,
@@ -215,8 +209,6 @@ export const Styles = StyleSheet.create({
     height: '45%',
     backgroundColor: '#E3F2FF',
     borderRadius: 20,
-    borderWidth: 1,
-    borderColor: 'red'
   },
   container2: {
     width: 80,
@@ -291,8 +283,7 @@ export const Styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    borderWidth: 1,
-    borderColor: 'red',
+
     flex: 1,
     position: 'absolute',
     transition: 'left 0.6s ease',
@@ -745,9 +736,7 @@ export const Styles = StyleSheet.create({
     position: 'absolute', 
     top: '18%', 
     backgroundColor: StylesColors.subColorLight.backgroundColor, 
-    borderWidth: 1, 
-    borderColor: 'green',
-    flex: 1
+    
   },
 
   //! 회사 소개 부분
@@ -759,8 +748,6 @@ export const Styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'flex-end',
 
-    borderWidth: 1,
-    borderColor: 'red',
   },
 
   //! 회사 재무 부분
@@ -772,8 +759,7 @@ export const Styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'flex-end',
 
-    borderWidth: 1,
-    borderColor: 'red',
+ 
   },
 
   //! 회사 이자 내역 부분
@@ -785,8 +771,7 @@ export const Styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'flex-end',
 
-    borderWidth: 1,
-    borderColor: 'red',
+  
   },
   
   //! 종목 상세화면 - 구매
@@ -798,8 +783,6 @@ export const Styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
 
-    borderWidth: 1,
-    borderColor: 'red',
   },
   buyInputWrap: {
     width: '95%', 
@@ -811,8 +794,6 @@ export const Styles = StyleSheet.create({
     backgroundColor: StylesColors.subColorDeep.backgroundColor,
     borderRadius: 10,
 
-    borderWidth: 1,
-    borderColor: 'red',
   },
   buyInput:{
     width: '25%',

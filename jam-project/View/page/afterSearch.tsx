@@ -99,7 +99,7 @@ const AfterSearchScreen: React.FC<any> = ({ navigation, route }) => {
             </TouchableOpacity>
           </View>
         </View>
-        <View style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1, backgroundColor: StylesColors.subColorLight.backgroundColor, borderWidth: 1, marginTop:'3%'}}>
+        <View style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1, backgroundColor: StylesColors.subColorLight.backgroundColor, marginTop:'3%'}}>
 
           {/* 내가 찜한 기업 영역 */}
           <FlatList
