@@ -125,7 +125,7 @@ export const Styles = StyleSheet.create({
     borderRadius: 10,
   },
   //! 홈 화면 - 검색창
-  serchBox: {
+  searchBox: {
     width: '95%',
     height: '6%',
     backgroundColor: StylesColors.whiteColor.backgroundColor,
@@ -601,12 +601,13 @@ export const Styles = StyleSheet.create({
   //! 주식 검색화면
   myLoveCpy: {
     width: '100%',
-    height: '100%',
+    height: '45%',
     display: 'flex',
     flexDirection: 'column',
     // justifyContent: 'center',
-    // marginTop: '3%',
+    marginTop: '2%',
     alignItems: 'center',
+    backgroundColor: StylesColors.subColorLight.backgroundColor,
     padding: '1%',
     flex:1,
 
@@ -616,12 +617,14 @@ export const Styles = StyleSheet.create({
   userLoveCpy: {
     width: '100%',
     height: '45%',
-    marginTop: '4%',
+    marginTop: '2%',
     backgroundColor: StylesColors.subColorLight.backgroundColor,
     display: 'flex',
     flexDirection: 'column',
     // justifyContent: 'center',
     alignItems: 'center',
+    flex:1,
+
 
     borderWidth: 1,
     borderColor: 'red'
@@ -646,11 +649,12 @@ export const Styles = StyleSheet.create({
     borderColor: 'red'
   },
   myLoveListWrap:{
-    width: '100%',
-    height: '100%',
+    width: '95%',
+    height: '13%',
+    marginTop: '3%',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-between',
     alignItems: 'center',
     
     

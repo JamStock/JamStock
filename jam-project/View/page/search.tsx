@@ -64,8 +64,8 @@ const SearchScreen: React.FC<any> = ({ navigation }) => {
 
       {/*========== search 영역 =========*/}
       <View style={Styles.homeArea}>
-        <View style={{width: '100%', height:'10%', backgroundColor: StylesColors.subColorLight.backgroundColor, marginTop: '7%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
-          <View style={{width: '95%', height: '70%', backgroundColor: StylesColors.whiteColor.backgroundColor, borderRadius: 20, display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+        <View style={{width: '100%', height:'7%', backgroundColor: StylesColors.subColorLight.backgroundColor, marginTop: '7%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+          <View style={{width: '95%', height: '80%', backgroundColor: StylesColors.whiteColor.backgroundColor, borderRadius: 20, display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
             <TextInput
               style={Styles.serchBar}
               onChangeText={text => setSearchText(text)}

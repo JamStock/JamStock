@@ -37,7 +37,7 @@ const HomeScreen: React.FC<any> = ({ navigation }) => {
       <TopMenu navigation={navigation} />
       {/*========== home 영역 =========*/}
       <View style={Styles.homeArea}>
-        <View style={Styles.serchBox}>
+        <View style={Styles.searchBox}>
           <TextInput
             style={Styles.serchBar}
             onChangeText={text => setSearchText(text)}

@@ -36,22 +36,34 @@ const buyList = (data: Companydata) => {
 const sellList = (data: Companydata) => {
   console.log("flat value: ", data)
   return (
-    <View style={{width: '100%', height: '100%', display: 'flex', flexDirection: 'row', flex: 1,}}>
+    <View style={Styles.rankingCompanyPrice}>
       <View>
-        <Text style={Styles.rankingCompanyText}>다른 사람들은 얼마에 팔까?</Text>
+        <Text style={Styles.rankingCompanyText}>판매 금액</Text>
+        <Text style={Styles.rankingCompanyText}>{data.sellPrice}</Text>
       </View>
-      <View>
-        <View>
-          <Text style={Styles.rankingCompanyText}>판매 금액</Text>
-          <Text style={Styles.rankingCompanyText}>{data.sellPrice}</Text>
-        </View>
-        <View style={Styles.rankingCompanyPrice}>
-          <Text style={Styles.rankingCompanyText}>판매 가능 수량</Text>
-          <Text style={Styles.rankingCompanyText}>{data.sellCount}</Text>
-        </View>
+      <View style={Styles.rankingCompanyPrice}>
+        <Text style={Styles.rankingCompanyText}>판매 가능 수량</Text>
+        <Text style={Styles.rankingCompanyText}>{data.sellCount}</Text>
       </View>
     </View>
   )
+  // return (
+  //   <View style={{width: '100%', height: '100%', display: 'flex', flexDirection: 'row', flex: 1,}}>
+  //     <View>
+  //       <Text style={Styles.rankingCompanyText}>다른 사람들은 얼마에 팔까?</Text>
+  //     </View>
+  //     <View>
+  //       <View>
+  //         <Text style={Styles.rankingCompanyText}>판매 금액</Text>
+  //         <Text style={Styles.rankingCompanyText}>{data.sellPrice}</Text>
+  //       </View>
+  //       <View style={Styles.rankingCompanyPrice}>
+  //         <Text style={Styles.rankingCompanyText}>판매 가능 수량</Text>
+  //         <Text style={Styles.rankingCompanyText}>{data.sellCount}</Text>
+  //       </View>
+  //     </View>
+  //   </View>
+  // )
 }
 
 export default function ContentReturn(activeTab: string, cmpCode:string, cmpName:string, cmpPr:string, navigation: any) {
@@ -74,7 +86,7 @@ export default function ContentReturn(activeTab: string, cmpCode:string, cmpName
   const codeObj = {
     "code": cmpCode
   }
-
+  
   const BuySellResult = () => {
     if(activeTab === 'buy'){
       console.log("구매액: ", buyText, "개수: ", buyCountText);
@@ -115,7 +127,7 @@ export default function ContentReturn(activeTab: string, cmpCode:string, cmpName
         }
         askingData.push(val)
       }
-
+      console.log("데이타타타타ㅏ탙 ", askingData)
     })
     .catch(error => {
       console.error('에러가 발생했습니다:', error);
@@ -233,9 +245,17 @@ export default function ContentReturn(activeTab: string, cmpCode:string, cmpName
           </View>
 
           {/* 내용 2 */}
-          <FlatList
-          data={askingData}
-          renderItem={({ item }) => sellList(item)} />
+          <View style={{width: '100%', height: '100%', display: 'flex', flexDirection: 'row'}}>
+            <View>
+              <Text style={Styles.rankingCompanyText}>다른 사람들은 얼마에 팔까?</Text>
+            </View>
+            <View style={{flex: 1,}}>
+              <FlatList
+                data={askingData}
+                renderItem={({ item }) => sellList(item)} />
+            </View>
+          </View>
+          
 
           {/* 내용 3 */}
           {/* <View style={Styles.companyInterestWrap}></View> */}

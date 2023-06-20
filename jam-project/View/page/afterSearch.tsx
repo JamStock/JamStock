@@ -79,7 +79,7 @@ const AfterSearchScreen: React.FC<any> = ({ navigation, route }) => {
 
       {/*========== search 영역 =========*/}
       <View style={Styles.homeArea}>
-        <View style={Styles.serchBox}>
+        <View style={Styles.searchBox}>
           <TextInput
             style={Styles.serchBar}
             onChangeText={text => setSearch(text)}
