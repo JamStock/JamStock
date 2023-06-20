@@ -33,10 +33,21 @@ const getLoginInfo = async () => {
   }
 }
 
+// 앱 실행 시 AsyncStorage에서 아이디 가져오기
+const getLoginInfoID = async () => {
+  try {
+    const UserID = await AsyncStorage.getItem('login')
+    return UserID;
+  } catch (error) {
+    console.log('AsyncStorage에서 값 가져오는 중 오류 발생:', error);
+    return null;
+  }
+}
+
 // 로그인 상태 확인
 const stateLogin = async () => {
   const userId = await getLoginInfo();
   return userId !== null;
 }
 
-export { saveLogin, removeLogin, getLoginInfo, stateLogin }
+export { saveLogin, removeLogin, getLoginInfo, getLoginInfoID, stateLogin }

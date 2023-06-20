@@ -623,18 +623,17 @@ export const Styles = StyleSheet.create({
     flexDirection: 'column',
     // justifyContent: 'center',
     alignItems: 'center',
-    flex:1,
+    flex: 1,
 
-
-    borderWidth: 1,
-    borderColor: 'red'
+    // borderWidth: 1,
+    // borderColor: 'red'
   },
   searchListText: {
     // width: '40%',
     // height: '80%',
-    fontSize: StylesText.sizeSmall.fontSize,
+    fontSize: StylesText.sizeMedium.fontSize,
     textAlign: 'center',
-    marginTop: '2%'
+    // marginTop: '2%',
 
     // borderWidth: 1,
     // borderColor: 'red'
@@ -645,8 +644,8 @@ export const Styles = StyleSheet.create({
     height: '90%',
     resizeMode: 'contain',
 
-    borderWidth: 1,
-    borderColor: 'red'
+    // borderWidth: 1,
+    // borderColor: 'red'
   },
   myLoveListWrap:{
     width: '95%',
@@ -670,8 +669,8 @@ export const Styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     
-    borderWidth: 1,
-    borderColor: 'red'
+    // borderWidth: 1,
+    // borderColor: 'red'
   },
 
   //! 주식종목 상세 페이지
@@ -722,8 +721,8 @@ export const Styles = StyleSheet.create({
     justifyContent: 'space-around',
     // alignItems: 'flex-end',
 
-    borderWidth: 1,
-    borderColor: 'red',
+    // borderWidth: 1,
+    // borderColor: 'red',
   },
   companyTabBtn: {
     width: '24%',
@@ -731,8 +730,8 @@ export const Styles = StyleSheet.create({
     borderRadius:10,
     backgroundColor: StylesColors.subColorDeep.backgroundColor,
 
-    borderWidth: 1,
-    borderColor: 'red',
+    // borderWidth: 1,
+    // borderColor: 'red',
   },
   companyTabText: {
     height: '40%', 
@@ -850,7 +849,53 @@ export const Styles = StyleSheet.create({
     marginLeft: '15%',
     padding: '3%'
   },
-  
+  //! 주식 호가 스타일
+  askingTitleWrap: {
+    width: '100%', 
+    display: 'flex', 
+    flexDirection: 'column', 
+    marginTop:'3%'
+  },
+  askingTitle: {
+    fontSize: StylesText.sizeMedium.fontSize, 
+    fontWeight: StylesText.weightBold.fontWeight
+  },
+  askingNameWrap: {
+    width: '100%', 
+    display: 'flex', 
+    flexDirection: 'row',
+    justifyContent: 'center', 
+    alignItems: 'center', 
+    marginTop:'3%'
+  },
+  askingName: {
+    fontSize: StylesText.sizeSmall.fontSize, 
+    fontWeight: StylesText.weightBold.fontWeight,
+  },
+  askingWrap: {
+    width: '100%', 
+    height: '100%', 
+    display: 'flex', 
+    flexDirection: 'column', 
+    alignItems: 'center',
+    flex: 1,
+
+  },
+  askingPCWrap: {
+    width: '100%', 
+    height: '100%', 
+    display: 'flex', 
+    flexDirection: 'row', 
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    marginTop: '2%',
+
+    // margin: '1%',
+    flex: 1,
+  },
+  askingPCText: {
+    fontSize: StylesText.sizeSmall.fontSize,
+  },
   // ! 장바구니 
   cartBox: {
     width: "100%",
@@ -1176,11 +1221,12 @@ export const Styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexWrap: 'wrap',
+    flex:1
   },
   recomandCompanyBallBig: {
     width: 110,
     height: 110,
-    backgroundColor: StylesColors.grayColor.backgroundColor,
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -1190,7 +1236,7 @@ export const Styles = StyleSheet.create({
   recomandCompanyBallMedium: {
     width: 100,
     height: 100,
-    backgroundColor: StylesColors.grayColor.backgroundColor,
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -1200,12 +1246,17 @@ export const Styles = StyleSheet.create({
   recomandCompanyBallSmall: {
     width: 90,
     height: 90,
-    backgroundColor: StylesColors.grayColor.backgroundColor,
+    backgroundColor: StylesColors.subColorDeep.backgroundColor,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 70,
     margin: 5
+  },
+  recommandCompanyName:{
+    width:'100%',
+    fontSize:StylesText.sizeSmall.fontSize,
+    textAlign:'center',
   },
 
   // ! 실시간 페이지
@@ -1623,6 +1674,16 @@ export const Styles = StyleSheet.create({
     justifyContent: "center",
     marginRight: 20,
     marginTop: 20
-  }
+  },
+
+  // ! 첫 입장 모달창
+  entranceBox:{
+    width:400,
+    height:300,
+    display:'flex',
+    flexDirection:'column',
+    // alignItems:''
+  },
+  
 
 });

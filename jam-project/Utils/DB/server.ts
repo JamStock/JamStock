@@ -1,14 +1,16 @@
 import express, { Request, Response } from 'express';
 import { signCheck, signResult } from '../../Models/DB/signUp';
 import { DBInfo } from './DBConnect';
-import {bidAskPriceInsert, stockCodeSend} from '../../Models/DB/bidAskPrice';
-import {loveCheck, loveInput} from '../../Models/DB/companyLove';
+import { bidAskPriceInsert, stockCodeSend } from '../../Models/DB/bidAskPrice';
+import { loveCheck, loveInput } from '../../Models/DB/companyLove';
 
 const app = express();
 DBInfo.connect(() => {
   console.log('Database open! port is 3306')
 })
 
+
+// 로그인 시 DB 연동
 app.post('/login', (req: Request, res: Response) => {
 
   let body = "";
@@ -33,26 +35,33 @@ app.post('/login', (req: Request, res: Response) => {
   });
 });
 
+// 회원가입 시 확인
 app.post('/checkSignUp', (req: Request, res: Response) => {
   signCheck(req, res);
 
 });
 
+// 회원가입 결과
 app.post('/resultSignUp', (req: Request, res: Response) => {
   signResult(req, res);
 
 });
-app.post('/priceData',(request:Request, response:Response) => {
+
+
+app.post('/priceData', (request: Request, response: Response) => {
   //주식의 매수호가, 매도호가 저장
   bidAskPriceInsert(request, response);
 
 });
-app.get('/stockCodeData',(request:Request, response:Response) => {
+
+
+app.get('/stockCodeData', (request: Request, response: Response) => {
   //주식의 매수호가, 매도호가 저장
   stockCodeSend(request, response);
 
 });
 
+// 아이디 찾기 DB 연동
 app.post('/findID', (req: Request, res: Response) => {
   let datas = ''
   req.on('data', (data) => {
@@ -76,6 +85,7 @@ app.post('/findID', (req: Request, res: Response) => {
 
 })
 
+// 비밀번호 재설정 DB 연동
 app.post('/resetPassword', (req: Request, res: Response) => {
   let datas = ''
 
@@ -129,14 +139,75 @@ app.post('/resetPassword', (req: Request, res: Response) => {
 
 })
 
+// 좋아요 확인
 app.post('/likeCheck', (req: Request, res: Response) => {
   loveCheck(req, res);
 
 });
+
+// 좋아요 클릭 시 DB 저장
 app.post('/companyLike', (req: Request, res: Response) => {
   loveInput(req, res);
 
 });
+
+// 마이페이지 정보 불러오기
+app.post('/myPage', (req: Request, res: Response) => {
+  let datas = ''
+  req.on('data', (data) => {
+    datas += data
+  })
+  req.on('end', () => {
+
+    let userData = {}
+
+    DBInfo.query(`select nickname, email, birthday from userinfo where id='${JSON.parse(datas)}'`, (err, result: any) => {
+      if (err) console.log(err)
+      Object.assign(userData, result[0])
+
+      DBInfo.query(`select upperlimit, lowerlimit from useroption where id='${JSON.parse(datas)}'`, (err, result: any) => {
+        if (err) console.log(err)
+        Object.assign(userData, result[0])
+        console.log(userData)
+        res.json(JSON.stringify(userData))
+      })
+    })
+
+  })
+})
+
+// 최초 입장 여부 DB 확인
+app.post('/entrance', (req, res) => {
+  let datas = ''
+  req.on('data', (data) => {
+    datas += data
+  })
+  req.on('end', () => {
+    const user = JSON.parse(datas)
+    DBInfo.query(`select firstentrance from ${user}`, (err, result) => {
+      console.log(result)
+      // if(result===0){
+      res.json()
+      // }
+    })
+
+  })
+})
+
+app.post('/recommand', (req, res) => {
+  let datas = ''
+  req.on('data', (data) => {
+    datas += data
+  })
+  req.on('end', () => {
+    DBInfo.query(`select ${JSON.parse(datas)} from recommandcompany`, (err, result) => {
+      if (err) console.error('뭔데:', err)
+      console.log('?? : ', result)
+
+      res.json(result)
+    })
+  })
+})
 
 // 서버 포트 설정
 app.listen(3080, () => {

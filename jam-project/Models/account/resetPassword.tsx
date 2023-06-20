@@ -1,6 +1,7 @@
 import { response } from "express";
 import React from "react";
 import { Alert } from "react-native";
+import url from '../func/fetchURL'
 
 export const ResetPassword=(id:string,email:string,password:string)=>{
   // console.log("함수 실행은 되나 : "+id, email, password)
@@ -11,7 +12,7 @@ export const ResetPassword=(id:string,email:string,password:string)=>{
     password:password
   }
 
-  fetch('http://192.168.100.81:3080/resetPassword',{
+  fetch(`${url}:3080/resetPassword`,{
   method:'POST',
   body:JSON.stringify(resetPassword)
   })

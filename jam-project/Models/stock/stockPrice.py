@@ -124,7 +124,7 @@ def post_buySell():
         sellP.append(askp.askp[i])
         sellC.append(askp.askp_rsqn[i])
         
-    for i in range(10):
+    for i in range(9, -1, -1):
         print(f'BUY  {i+1:3d}: {askp.bidp[i]:8d}원 {askp.bidp_rsqn[i]:8d}주')
         buyP.append(askp.bidp[i])
         buyC.append(askp.bidp_rsqn[i])
@@ -138,8 +138,8 @@ def post_buySell():
         'hgpr': price.stck_hgpr, #종목 최고가
         'sellPrice': sellP, #매수 호가
         'sellCount': sellC, #매수 잔량
-        'buyPrice': sellC, #매도 호가
-        'buyCount': sellC, #매도 잔량
+        'buyPrice': buyP, #매도 호가
+        'buyCount': buyC, #매도 잔량
     }
     my_object.data[key] = value
 
