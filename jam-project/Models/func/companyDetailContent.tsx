@@ -94,7 +94,8 @@ export default function ContentReturn(activeTab: string, cmpCode:string, cmpName
       setBuyC(json['buyCount'])
       sethight(changeCurr(json['hgpr']))
       setlow(changeCurr(json['lwpr']))
-
+      // askingData.length = 0;
+      
       for(let i = 0; i < sellP.length; i++){
         let val = {
           sellCount: sellC[i],
